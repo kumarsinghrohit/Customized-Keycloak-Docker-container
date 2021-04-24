@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>keycloak-parent</artifactId>
+        <groupId>org.keycloak</groupId>
+        <version>8.0.1</version>
+    </parent>
+
+    <name>user-registration-event-listener parent</name>
+    <description/>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.auth.extension</groupId>
+    <artifactId>user-registration-event-listener-parent</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <version.keycloak>8.0.1</version.keycloak>
+        <version.keycloak-events-api>1.8.1.Final</version.keycloak-events-api>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-core</artifactId>
+                <version>${version.keycloak}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-common</artifactId>
+                <version>${version.keycloak}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-server-spi</artifactId>
+                <version>${version.keycloak}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-server-spi-private</artifactId>
+                <version>${version.keycloak}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.auth.extension</groupId>
+                <artifactId>user-registration-event-listener-ejb</artifactId>
+                <version>1.0</version>
+                <type>ejb</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>user-registration-event-listener-ejb</module>
+        <module>user-registration-event-listener-ear</module>
+    </modules>
+</project>

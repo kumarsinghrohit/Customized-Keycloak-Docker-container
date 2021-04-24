@@ -1,0 +1,28 @@
+FROM jdk11 as builder
+
+# 'pune' or 'somewhere'
+ARG MAVEN_SETTINGS=pune
+# add predefined settings
+ADD http://<mynexus>:8081/repository/settings/maven/settings-${MAVEN_SETTINGS}.xml /maven-settings.xml
+
+COPY ./extensions/user-registration-event-listener-extension /work
+WORKDIR /work
+
+# Use the defined settings
+RUN mvn -s /maven-settings.xml clean package
+
+
+# Create Keycloak image
+FROM jboss/keycloak:8.0.1
+
+ENV KEYCLOAK_USER=admin
+ENV KEYCLOAK_PASSWORD=admin
+
+ENV PROXY_ADDRESS_FORWARDING=true
+
+COPY ./themes/. /opt/jboss/keycloak/themes/
+COPY --from=builder /work/user-registration-event-listener-ear/target/*.ear /opt/jboss/keycloak/standalone/deployments/
+
+ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
+
+CMD ["-b", "0.0.0.0"]

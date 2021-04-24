@@ -1,0 +1,155 @@
+h1 {
+  font: Bold 30px/19px Muli;
+  letter-spacing: 0.48px;
+  color: #3B3B3B;
+  opacity: 1;
+  padding-top: 30px;
+}
+
+a {
+  outline: 0;
+}
+
+input[type="checkbox"] {
+  display:none;
+}
+
+input[type="checkbox"] + label::before {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1px solid #707070;
+  background-color: #fff;
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 7px;
+  margin-top: 0.2rem;
+}
+
+input[type="checkbox"]:checked+label::before {
+  box-shadow: inset 0px 0px 1px 2px #fff;
+  background-color: black;
+}
+
+#kc-content {
+  margin-top: 80px;
+
+}
+
+#kc-content-wrapper {
+  margin: auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 4px;
+  opacity: 1;
+  width: 540px;
+  padding: 10px;
+  padding-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#newsletter {
+  float: left;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.password-eye {
+	content:url("../img/eye.svg");
+}
+.password-eye-slash {
+	content:url("../img/eye_slash.svg");
+}
+
+.close-circle {
+	content:url("../img/close-circle.svg");
+}
+
+.newsletterWrapper {
+    margin-top: 50px;
+}
+
+.infoText {
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 12px;
+}
+
+.infoTextBottom {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 12px;
+  padding-top: 50px;
+}
+
+.kc-input {
+  color: #3b3b3b;
+  font-size: 18px;
+  border: none;
+  height: 58px;
+  width: 290px;
+  margin-left: 20px;
+  padding: 0px;
+  padding-left: 0px;
+}
+
+.inputIcon {
+  width:20px;
+  height:30px;
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;  
+  color: #7B7B7B;
+  margin: 10px 0 10px 10px;
+}
+
+.input-group-append {
+  height: 60px;
+  border-left: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.kc-button {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #FE6363 0% 0% no-repeat padding-box;
+  border: 1px solid #FE6363;
+  border-radius: 10px;
+  opacity: 1;
+  width: 380px;
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #FFFFFF
+}
+
+.alert {
+  text-align: left;
+  font: Regular 12px/15px Muli;
+  letter-spacing: 0;
+  color: #FF0404;
+  opacity: 1;
+}
+
+.login-button {
+  margin-top: 30px;
+}
+
+.login__title {
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.register__title {
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
